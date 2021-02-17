@@ -1,16 +1,24 @@
 package com.i4bchile.ensayoprueba_apicelulares.model.data
 
-interface PokeAPI {
-    @GET("pokemon")
-    suspend fun getPokemones(): Response<List<Pokemon>>
+import com.i4bchile.ensayoprueba_apicelulares.model.Product
+import com.i4bchile.ensayoprueba_apicelulares.model.ProductDetail
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Path
 
-    @GET("pokemon/{pid}")
-    suspend fun getPokemon(@Path("pid") id: Int): Response<PokeDetail>
+interface PokeAPI {
+    @GET("products/")
+    suspend fun getProducts(): Response<List<Product>>
+
+    @GET("details/{pid}")
+    suspend fun getProductDetail(@Path("pid") id: Int): Response<ProductDetail>
 }
 
 class RetrofitClient {
     companion object {
-        private const val BASE_URL =  "https://lapi-pokemon.herokuapp.com/"
+        private const val BASE_URL =  "https://my-json-server.typicode.com/Himuravidal/FakeAPIdata/"
 
         fun retrofitInstance(): PokeAPI {
             val retrofit = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(

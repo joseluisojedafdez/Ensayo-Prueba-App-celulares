@@ -2,7 +2,9 @@ package com.i4bchile.ensayoprueba_apicelulares
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.i4bchile.ensayoprueba_apicelulares.databinding.ActivityMainBinding
+import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
 
 /*
  *
@@ -13,14 +15,14 @@ import com.i4bchile.ensayoprueba_apicelulares.databinding.ActivityMainBinding
 
  * [x] MainActivity
  *      [x] fragment container view
- * [] ViewModel (Commit 2 "activado Viewmodel y generado fragment container view"
- * [] consumo de API (1/listado 2/detalle)
- *      [] permiso de internet
- *      [] cleartext Traffic si es https
- *      [] dependencias retrofit
- *      [] pojos []listado [] detalle
- *      [] interfaz de operaciones
- *      [] cliente retrofit (Commit 3 "consumo de API activado y comprobado con logs") /(Commit 6 "se prueba el consumo de API para el detalle")
+ * [x] ViewModel (Commit 2 "activado Viewmodel y generado fragment container view"
+ * [x] consumo de API (1/listado 2/detalle)
+ *      [x] permiso de internet
+ *      [x] cleartext Traffic si es https
+ *      [x] dependencias retrofit
+ *      [x] pojos [x]listado [x] detalle
+ *      [x] interfaz de operaciones
+ *      [x] cliente retrofit (Commit 3 "consumo de API activado y comprobado con logs") /(Commit 6 "se prueba el consumo de API para el detalle")
 * [ ] ROOM (1/Listado 2/Detalle)
  *      [] Dependencias
  *      [] Type Converters
@@ -46,9 +48,15 @@ import com.i4bchile.ensayoprueba_apicelulares.databinding.ActivityMainBinding
  */
 
 class MainActivity : AppCompatActivity() {
+
+    val viewModel: ProductVM by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding= ActivityMainBinding.inflate(layoutInflater)
+
+        viewModel.doSomething()
+
         setContentView(binding.root)
     }
 }
