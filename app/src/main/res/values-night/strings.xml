@@ -3,4 +3,8 @@
     <string name="nombre_del_producto">Nombre del Producto</string>
     <string name="foto_celular">FOTO CELULAR</string>
     <string name="precio_listado">PRECIO LISTADO</string>
+    <string name="nombre_detalle">NOMBRE DETALLE</string>
+    <string name="precio_detalle">PRECIO DETALLE</string>
+    <string name="imagendetalle">imagendetalle</string>
+    <string name="credito">Credito</string>
 </resources>

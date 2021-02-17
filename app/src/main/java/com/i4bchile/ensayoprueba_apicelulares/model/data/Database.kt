@@ -18,6 +18,11 @@ class Database {
         @Query("SELECT * FROM product")
         fun getAllProducts(): LiveData<List<Product>>
 
+        @Insert(onConflict=OnConflictStrategy.REPLACE)
+        suspend fun loadProductDetail(productDetail:ProductDetail)
+
+        @Query("SELECT *FROM productdetail WHERE id=:pId")
+        fun getProductDetail(pId:Int):LiveData<ProductDetail>
 
     }
 

@@ -26,7 +26,7 @@ data class Product (@PrimaryKey val id:Int,
 data class ProductDetail(@PrimaryKey val id:Int,
                          val name:String,
                          val price:Int,
-                         val Image:String,
+                         val image:String,
                          val description:String,
                          val lastPrice:Int,
                          val credit:Boolean)

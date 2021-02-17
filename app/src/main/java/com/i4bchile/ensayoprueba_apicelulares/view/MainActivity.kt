@@ -38,13 +38,14 @@ import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
  *      [x] Viewholder
  *      [x] item layout
  *      [x] enlazar las piezas (Commit 5 "se muestra el listado")
- *      [] onclick en un elemento de listado
- * [ ] detalle
- *      [] fragmento de detalle
- *      [] layout
- *      [] viewBinding
- *      [] observar la info del pokemon para detalle
- *      [] consumo de imágenes (Commit 8 "se muestra el detalle")
+ *      [x] onclick en un elemento de listado
+ * [x ] detalle
+ *      [x] fragmento de detalle
+ *      [x] layout
+ *      [x] viewBinding
+ *      [x] observar la info del producto para detalle
+ *      [x] consumo de imágenes (Commit 8 "se muestra el detalle")
+ *      [ ] boton para enviar el email
  *
  */
 

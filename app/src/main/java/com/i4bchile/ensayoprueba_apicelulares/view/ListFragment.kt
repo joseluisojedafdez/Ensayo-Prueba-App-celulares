@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.i4bchile.ensayoprueba_apicelulares.R
 import com.i4bchile.ensayoprueba_apicelulares.databinding.FragmentListBinding
 import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
 
@@ -27,6 +28,17 @@ class ListFragment: Fragment() {
         viewModel.productList.observe(viewLifecycleOwner,{
                 productList->productList?.let{
                 adapter.updateList(it)}
+        })
+
+        adapter.getSelected().observe(viewLifecycleOwner,{ product->product?.let{
+            viewModel.setSelected(it)}
+
+            activity
+                ?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.main_container,DetailFragment(product.id))
+                ?.addToBackStack("volver")
+                ?.commit()
         })
         return binding.root
     }

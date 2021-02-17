@@ -1,6 +1,9 @@
 package com.i4bchile.ensayoprueba_apicelulares.model.data
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import com.i4bchile.ensayoprueba_apicelulares.model.ProductDetail
+import retrofit2.Retrofit
 
 class Repository {
     private val database=Database.ProductApplication.productDatabase!!
@@ -9,6 +12,7 @@ class Repository {
 suspend fun getProductList(){
 
     val response=RetrofitClient.retrofitInstance().getProducts()
+
 
 
     when (response.isSuccessful){
@@ -24,6 +28,27 @@ suspend fun getProductList(){
         }
     }
 }
+
+suspend fun getProductDetail(id: Int) {
+        val response=RetrofitClient.retrofitInstance().getProductDetail(id)
+
+        when(response.isSuccessful){
+            true->{
+                response.body()?.let{
+                    database.productDao().loadProductDetail(it)
+                }
+
+            }
+            false->{Log.d("Repository","error de conexión ${response.code()}")}
+        }
+
+    }
+
+    fun getDetail(id: Int): LiveData<ProductDetail> {
+
+        return database.productDao().getProductDetail(id)
+
+    }
 
 
 }
