@@ -11,8 +11,8 @@ import com.i4bchile.ensayoprueba_apicelulares.databinding.ActivityMainBinding
  *      [x] activar (build.gradle app)
  *      [x] actualizar Activities y fragments con viewBinding (Commit 1 "proyecto vacío con viewbinding activado")
 
- * [] MainActivity
- *      [] fragment container view
+ * [x] MainActivity
+ *      [x] fragment container view
  * [] ViewModel (Commit 2 "activado Viewmodel y generado fragment container view"
  * [] consumo de API (1/listado 2/detalle)
  *      [] permiso de internet
