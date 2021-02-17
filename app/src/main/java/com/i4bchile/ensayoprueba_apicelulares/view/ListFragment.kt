@@ -1,6 +1,7 @@
 package com.i4bchile.ensayoprueba_apicelulares.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,13 +31,17 @@ class ListFragment: Fragment() {
                 adapter.updateList(it)}
         })
 
-        adapter.getSelected().observe(viewLifecycleOwner,{ product->product?.let{
-            viewModel.setSelected(it)}
+        adapter.getSelected().observe(viewLifecycleOwner, { product ->
+            product?.let {
 
+                viewModel.setSelected(it)
+
+            }
+            Log.d("List", "onCreateView: $product")
             activity
                 ?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.main_container,DetailFragment(product.id))
+                ?.replace(R.id.main_container, DetailFragment(product.id))
                 ?.addToBackStack("volver")
                 ?.commit()
         })

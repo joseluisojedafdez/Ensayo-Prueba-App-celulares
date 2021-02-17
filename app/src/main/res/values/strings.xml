@@ -7,4 +7,6 @@
     <string name="precio_detalle">PRECIO DETALLE</string>
     <string name="imagendetalle">imagendetalle</string>
     <string name="credito">Credito</string>
+    <string name="descripcion">DESCRIPCION</string>
+    <string name="enviar_email">ENVIAR EMAIL</string>
 </resources>

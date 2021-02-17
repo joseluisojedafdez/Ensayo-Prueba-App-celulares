@@ -1,5 +1,6 @@
 package com.i4bchile.ensayoprueba_apicelulares.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,6 +29,7 @@ class ProductVM: ViewModel() {
 
 
     fun loadSelectedDetail(id:Int){
+        Log.d("ViewModel", "insertando producto con id: $id")
         viewModelScope.launch{
             selected.value?.let{
                 repository.getProductDetail(id)}

@@ -47,6 +47,10 @@ import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
  *      [x] consumo de imágenes (Commit 8 "se muestra el detalle")
  *      [ ] boton para enviar el email
  *
+ * [] testing
+ *      [] 1 test unitario
+ *      [] 1 test instrumental
+ *
  */
 
 class MainActivity : AppCompatActivity() {

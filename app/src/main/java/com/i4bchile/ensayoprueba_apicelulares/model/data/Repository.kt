@@ -3,7 +3,6 @@ package com.i4bchile.ensayoprueba_apicelulares.model.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.i4bchile.ensayoprueba_apicelulares.model.ProductDetail
-import retrofit2.Retrofit
 
 class Repository {
     private val database=Database.ProductApplication.productDatabase!!
@@ -33,7 +32,9 @@ suspend fun getProductDetail(id: Int) {
         val response=RetrofitClient.retrofitInstance().getProductDetail(id)
 
         when(response.isSuccessful){
+
             true->{
+                Log.d("Repository","Insertando producto detalle ${response.body()}")
                 response.body()?.let{
                     database.productDao().loadProductDetail(it)
                 }

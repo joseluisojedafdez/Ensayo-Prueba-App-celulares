@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface PokeAPI {
+interface ProductAPI {
     @GET("products/")
     suspend fun getProducts(): Response<List<Product>>
 
@@ -20,12 +20,12 @@ class RetrofitClient {
     companion object {
         private const val BASE_URL =  "https://my-json-server.typicode.com/Himuravidal/FakeAPIdata/"
 
-        fun retrofitInstance(): PokeAPI {
+        fun retrofitInstance(): ProductAPI {
             val retrofit = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(
                 GsonConverterFactory.create())
                 .build()
 
-            return retrofit.create(PokeAPI::class.java)
+            return retrofit.create(ProductAPI::class.java)
         }
     }
 }
