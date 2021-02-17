@@ -1,5 +1,8 @@
 package com.i4bchile.ensayoprueba_apicelulares.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 /*
 "id": 1,
 "name": "Samsung Galaxy A21s 64GB",
@@ -14,13 +17,13 @@ pantalla 720 x 1600",
 
  */
 
-
-data class Product (val id:Int,
+@Entity(tableName="product")
+data class Product (@PrimaryKey val id:Int,
                     val name:String,
                     val price:Int,
                     val image:String)
-
-data class ProductDetail(val id:Int,
+@Entity(tableName="productdetail")
+data class ProductDetail(@PrimaryKey val id:Int,
                          val name:String,
                          val price:Int,
                          val Image:String,

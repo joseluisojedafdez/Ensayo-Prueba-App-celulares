@@ -23,12 +23,12 @@ import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
  *      [x] pojos [x]listado [x] detalle
  *      [x] interfaz de operaciones
  *      [x] cliente retrofit (Commit 3 "consumo de API activado y comprobado con logs") /(Commit 6 "se prueba el consumo de API para el detalle")
-* [ ] ROOM (1/Listado 2/Detalle)
- *      [] Dependencias
- *      [] Type Converters
- *      [] interfaz de operaciones (DAO) [] listado []detalle
- *      [] pojos (entities) []listado [] detalle
- *      [] database & application (declarar application en Manifest) (Commit 4 "se activa room y se guardan los datos de la API en BBDD local")/(Commit 7 "Se 	guardan lo datos del detalle en base de datos local")*7 es opcional
+* [x ] ROOM (1/Listado 2/Detalle)
+ *      [x] Dependencias
+ *      [] Type Converters (n/a)
+ *      [x] interfaz de operaciones (DAO) [x] listado []detalle
+ *      [x] pojos (entities) [x]listado [x] detalle
+ *      [x] database & application (declarar application en Manifest) (Commit 4 "se activa room y se guardan los datos de la API en BBDD local")/(Commit 7 "Se 	guardan lo datos del detalle en base de datos local")*7 es opcional
  * [] Listado
  *      [] Fragmento de listado
  *      [] layout
