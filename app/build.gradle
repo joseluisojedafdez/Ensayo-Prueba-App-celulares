@@ -64,6 +64,9 @@ dependencies {
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
 
+    // Images
+    implementation "io.coil-kt:coil:1.1.1"
+    implementation "io.coil-kt:coil-svg:1.1.1"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

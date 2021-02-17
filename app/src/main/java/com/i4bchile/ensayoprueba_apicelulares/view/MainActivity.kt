@@ -1,8 +1,9 @@
-package com.i4bchile.ensayoprueba_apicelulares
+package com.i4bchile.ensayoprueba_apicelulares.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.i4bchile.ensayoprueba_apicelulares.R
 import com.i4bchile.ensayoprueba_apicelulares.databinding.ActivityMainBinding
 import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
 
@@ -29,14 +30,14 @@ import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
  *      [x] interfaz de operaciones (DAO) [x] listado []detalle
  *      [x] pojos (entities) [x]listado [x] detalle
  *      [x] database & application (declarar application en Manifest) (Commit 4 "se activa room y se guardan los datos de la API en BBDD local")/(Commit 7 "Se 	guardan lo datos del detalle en base de datos local")*7 es opcional
- * [] Listado
- *      [] Fragmento de listado
- *      [] layout
- *      [] recycler view
- *      [] adapter
- *      [] Viewholder
- *      [] item layout
- *      [] enlazar las piezas (Commit 5 "se muestra el listado")
+ * [x] Listado
+ *      [x] Fragmento de listado
+ *      [x] layout
+ *      [x] recycler view
+ *      [x] adapter
+ *      [x] Viewholder
+ *      [x] item layout
+ *      [x] enlazar las piezas (Commit 5 "se muestra el listado")
  *      [] onclick en un elemento de listado
  * [ ] detalle
  *      [] fragmento de detalle
@@ -49,13 +50,18 @@ import com.i4bchile.ensayoprueba_apicelulares.viewmodel.ProductVM
 
 class MainActivity : AppCompatActivity() {
 
-    val viewModel: ProductVM by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding= ActivityMainBinding.inflate(layoutInflater)
 
-        viewModel.doSomething()
+       supportFragmentManager
+           .beginTransaction()
+           .replace(R.id.main_container,ListFragment())
+           .addToBackStack("volver")
+           .commit()
+
 
         setContentView(binding.root)
     }

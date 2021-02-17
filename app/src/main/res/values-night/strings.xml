@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ensayo Prueba - API Celulares</string>
     <string name="nombre_del_producto">Nombre del Producto</string>
     <string name="foto_celular">FOTO CELULAR</string>
     <string name="precio_listado">PRECIO LISTADO</string>

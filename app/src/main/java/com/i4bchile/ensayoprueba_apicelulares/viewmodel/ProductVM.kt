@@ -6,11 +6,11 @@ import com.i4bchile.ensayoprueba_apicelulares.model.data.Repository
 import kotlinx.coroutines.launch
 
 class ProductVM: ViewModel() {
-    fun doSomething() {
-        //esto es solo para probar el consumo de api. borrar después.
-    }
+
 
     val repository= Repository()
+
+    val productList=repository.productList
 
     init{
         viewModelScope.launch{
